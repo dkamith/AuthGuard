@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign Up</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                color: #333;
+            }
+            .container {
+                text-align: center;
+                background: white;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                width: 100%;
+            }
+            h2 {
+                color: #28a745;
+                margin-bottom: 20px;
+                font-size: 2em;
+            }
+            form {
+                text-align: left;
+            }
+            form p {
+                margin-bottom: 15px;
+            }
+            form label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            form input[type="text"],
+            form input[type="email"],
+            form input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 1em;
+                box-sizing: border-box;
+            }
+            form input[type="text"]:focus,
+            form input[type="email"]:focus,
+            form input[type="password"]:focus {
+                border-color: #28a745;
+                outline: none;
+            }
+            .errorlist {
+                color: #dc3545;
+                background-color: #f8d7da;
+                border: 1px solid #f5c6cb;
+                padding: 10px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                list-style: none;
+            }
+            .errorlist li {
+                margin: 0;
+            }
+            .field_with_errors input {
+                border-color: #dc3545;
+            }
+            button {
+                background-color: #28a745;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                font-size: 1em;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                width: 100%;
+                margin-top: 10px;
+            }
+            button:hover {
+                background-color: #218838;
+            }
+            .login-link {
+                margin-top: 20px;
+                display: block;
+                text-align: center;
+            }
+            .login-link a {
+                color: #28a745;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .login-link a:hover {
+                text-decoration: underline;
+            }
+            .browsehappy {
+                background: #cc0000;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <h2>Create Account</h2>
+            <form method='post'>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
+

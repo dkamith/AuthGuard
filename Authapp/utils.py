@@ -15,5 +15,6 @@ def generate_qr_code(username,secret):
     qr=qrcode.make(uri)
     buffer=BytesIO()
     qr.save(buffer,format="PNG")
+    buffer.seek(0)
     return base64.b64encode(buffer.getvalue()).decode()
 
